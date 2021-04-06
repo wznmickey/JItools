@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/category/home",
+    "pages/me/home"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle":"white",
+    "list": [{
+      "selectedIconPath": "images/choosehome.png",
+      "iconPath": "images/home.png",
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    },
+    {
+      "selectedIconPath": "images/choosecategory.png",
+      "iconPath": "images/category.png",
+      "pagePath": "pages/category/home",
+      "text": "分类"
+    },{
+      "selectedIconPath": "images/chooseuser center.png",
+      "iconPath": "images/user center.png",
+      "pagePath": "pages/me/home",
+      "text": "用户"
+    }
+  ]
+  }
+}
