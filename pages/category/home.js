@@ -53,6 +53,7 @@ Page({
       .catch(console.error);
   },
   comeback: function (event) {
+    console.log("comeback");
     if (this.data.chooseRecommendObject != "none") {
       this.setData({
         chooseRecommendObject: "none"
