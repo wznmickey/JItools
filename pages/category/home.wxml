@@ -1,3 +1,37 @@
 ﻿<view class=textCenter">
     <text>JI tools category</text>
 </view>
+<block wx:if="{{chooseplatform==='none'}}">
+    <view wx:for="{{platform}}" wx:for-item="i" wx:key="name">
+        <button id="{{i.name}}" bindtap="choosePlatform" type="default">{{i.showname}}</button>
+    </view>
+</block>
+<block wx:else>
+    <block wx:if="{{ chooseRecommendObject==='none'}}">
+        <view wx:for="{{recommendObject}}" wx:for-item="i" wx:key="name">
+            <button id="{{i.name}}" bindtap="chooserecommendObject" type="default">{{i.showname}}</button>
+        </view>
+    </block>
+    <block wx:else="">
+        <view wx:for="{{recommendObject}}" wx:for-item="i" wx:key="name">
+            <view>
+                <text type="default">工具名:{{i.showname}}</text>
+            </view>
+            <view>
+                <text type="default">平台:{{i.platform}}</text>
+            </view>
+            <view>
+                <text type="default">学科:{{i.subject}}</text>
+            </view>
+            <view>
+                <text type="default">类型:{{i.kind}}</text>
+            </view>
+            <view>
+                <text type="default">工具介绍:{{i.introduction}}</text>
+            </view>
+        </view>
+    </block>
+    <view>
+        <button bindtap="comeback" type="default">返回</button>
+    </view>
+</block>
