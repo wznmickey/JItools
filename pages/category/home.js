@@ -10,13 +10,15 @@ const getDataForRenderRecommendObject = recommendObject => ({
   platform: recommendObject.get('platform'),
   subject: recommendObject.get('subject'),
   introduction: recommendObject.get('introduction'),
+  photo: recommendObject.get('photo'),
 });
 Page({
   data: {
-    platform: [],
-    recommendObject: [],
+    platform: {},
+    recommendObject: {},
     chooseplatform: "none",
     chooseRecommendObject: "none",
+    photo: [],
   },
   onReady() {
     new AV.Query('Platform')
@@ -51,6 +53,18 @@ Page({
         recommendObject: recommendObject.map(getDataForRenderRecommendObject)
       }))
       .catch(console.error);
+    for (var i = 0; i < this.data.recommendObject.length; i++) {
+      var query = new AV.Query('_File')
+      for (var j = 0; j < this.data.recommendObject[i].photo.length; j++) {
+        query.get(this.data.recommendObject[i].photo[j].toString()).then((photo) => {
+          var url = photo.get('url');
+          this.data.photo.push(url);
+          this.setData({
+            photo: this.data.photo
+          });
+        }).catch(console.error);
+      }
+    }
   },
   comeback: function (event) {
     console.log("comeback");
@@ -58,8 +72,7 @@ Page({
       this.setData({
         chooseRecommendObject: "none"
       });
-    }
-    else if(this.data.chooseplatform != "none") {
+    } else if (this.data.chooseplatform != "none") {
       this.setData({
         chooseplatform: "none"
       });

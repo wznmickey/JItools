@@ -29,6 +29,7 @@
             <view>
                 <text type="default">工具介绍:{{i.introduction}}</text>
             </view>
+            <image wx:for="{{photo}}" wx:for-item="j" mode="widthFix" style="width:100%" src="{{j}}"></image>
         </view>
     </block>
     <view>
