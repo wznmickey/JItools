@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "CHANGELOG": "markdown",
-        "*.cjson": "jsonc",
-        "*.wxss": "css",
-        "*.wxs": "javascript",
-        "*.wxml": "html"
-    }
-}
