@@ -42,7 +42,7 @@
     "compileType": "miniprogram",
     "libVersion": "2.16.0",
     "appid": "wxb2ea410d6a5e6171",
-    "projectname": "demo-wx",
+    "projectname": "jitools",
     "debugOptions": {
         "hidedInDevtools": []
     },
