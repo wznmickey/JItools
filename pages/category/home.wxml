@@ -36,9 +36,17 @@
         </view>
     -->
         <text>{{showtag}}</text>
+        <block wx:for="{{photo}}" wx:for-item="j">
+            <image mode="widthFix" style="width:100%" src="{{j}}"></image>
+
+            <text>{{i.introductionText[index]}}</text>
+        </block>
+        <!--
         <image wx:for="{{photo}}" wx:for-item="j" mode="widthFix" style="width:100%" src="{{j}}"></image>
+        -->
     </view>
 </block>
+
 <block wx:if="{{showhistory.length>=2}}">
     <view>
         <button bindtap="comeback" type="default">返回</button>

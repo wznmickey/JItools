@@ -16,6 +16,7 @@ const getDataForRenderRecommendObject = recommendObject => ({
   //introduction: recommendObject.get('introduction'),
   tag: recommendObject.get('tag'),
   photo: recommendObject.get('photo'),
+  introductionText:recommendObject.get('introductionText')
 });
 Page({
   data: {
