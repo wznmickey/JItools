@@ -1,27 +1,28 @@
-﻿<view class=textCenter">
-    <text>JI tools category</text>
-</view>
-<block wx:if="{{showthings=='kind'}}">
-    <view wx:for="{{kind}}" wx:for-item="i" wx:key="name">
-        <button id="{{i.name}}" bindtap="chooseKind" type="default">{{i.showname}}</button>
+﻿<view style="margin:50rpx">
+    <view class=textCenter">
+        <text>JI tools category</text>
     </view>
-</block>
-<block wx:if="{{showthings=='platform'}}">
-    <view wx:for="{{platform}}" wx:for-item="i" wx:key="name">
-        <button id="{{i.name}}" bindtap="choosePlatform" type="default">{{i.showname}}</button>
-    </view>
-</block>
-<block wx:if="{{showthings=='chooseRecommendObject'}}">
-    <view wx:for="{{recommendObjectList}}" wx:for-item="i" wx:key="name">
-        <button id="{{i.name}}" bindtap="chooserecommendObject" type="default">{{i.showname}}</button>
-    </view>
-</block>
-<block wx:if="{{showthings=='RecommendObject'}}">
-    <view wx:for="{{recommendObject}}" wx:for-item="i" wx:key="name">
-        <view>
-            <text type="">{{i.showname}}</text>
+    <block wx:if="{{showthings=='kind'}}">
+        <view wx:for="{{kind}}" wx:for-item="i" wx:key="name">
+            <button id="{{i.name}}" bindtap="chooseKind" type="default">{{i.showname}}</button>
         </view>
-        <!--
+    </block>
+    <block wx:if="{{showthings=='platform'}}">
+        <view wx:for="{{platform}}" wx:for-item="i" wx:key="name">
+            <button id="{{i.name}}" bindtap="choosePlatform" type="default">{{i.showname}}</button>
+        </view>
+    </block>
+    <block wx:if="{{showthings=='chooseRecommendObject'}}">
+        <view wx:for="{{recommendObjectList}}" wx:for-item="i" wx:key="name">
+            <button id="{{i.name}}" bindtap="chooserecommendObject" type="default">{{i.showname}}</button>
+        </view>
+    </block>
+    <block wx:if="{{showthings=='RecommendObject'}}">
+        <view wx:for="{{recommendObject}}" wx:for-item="i" wx:key="name">
+            <view>
+                <text type="">{{i.showname}}</text>
+            </view>
+            <!--
         <view>
             <text type="default">平台:{{i.platform}}</text>
         </view>
@@ -35,20 +36,22 @@
             <text type="default">工具介绍:{{i.introduction}}</text>
         </view>
     -->
-        <text>{{showtag}}</text>
-        <block wx:for="{{photo}}" wx:for-item="j">
-            <image mode="widthFix" style="width:100%" src="{{j}}"></image>
 
-            <text>{{i.introductionText[index]}}</text>
-        </block>
-        <!--
+            <text>{{showtag}}</text>
+            <block wx:for="{{photo}}" wx:for-item="j" style="margin:10px">
+                <image mode="widthFix" style="width:100%;" src="{{j}}"></image>
+                <text>{{i.introductionText[index]}}</text>
+            </block>
+            <!--
         <image wx:for="{{photo}}" wx:for-item="j" mode="widthFix" style="width:100%" src="{{j}}"></image>
         -->
-    </view>
-</block>
+        </view>
 
-<block wx:if="{{showhistory.length>=2}}">
-    <view>
-        <button bindtap="comeback" type="default">返回</button>
-    </view>
-</block>
+    </block>
+
+    <block wx:if="{{showhistory.length>=2}}">
+        <view>
+            <button bindtap="comeback" type="default">返回</button>
+        </view>
+    </block>
+</view>
